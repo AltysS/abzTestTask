@@ -1,0 +1,75 @@
+@import "../../styles/abstracts/variables.scss";
+@media (min-width: 360px) {
+  .mainBackground {
+    background-color: #f8f8f8;
+  }
+  .wrapper {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding-top: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 75px;
+    margin: 0 auto;
+  }
+  .about {
+    max-width: 380px;
+    margin: 0 auto;
+    & > :first-child {
+      font-size: 40px;
+      color: #ffff;
+      margin-bottom: 20px;
+    }
+    & > p {
+      font-size: 16px;
+      line-height: 26px;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+  }
+  .backgroundWrapper {
+    padding-top: 140px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 140px;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .workingWithGetReq {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.87);
+    margin-bottom: 50px;
+  }
+  .cardsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+  .workingWithPostReq {
+    padding-bottom: 100px;
+    background-color: $background-color;
+  }
+  .workingWithPostReqTitle {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 40px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cardsWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .cardsWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}

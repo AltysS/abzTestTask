@@ -1,0 +1,113 @@
+.rootForm {
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  max-width: 380px;
+  width: -webkit-fill-available;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.radioWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 10px;
+  & > span {
+    left: 0;
+    top: 150px;
+  }
+  // margin: 0 auto;
+}
+
+.fromControl {
+  margin-bottom: 50px;
+  position: relative;
+  & > input {
+    background: #f8f8f8;
+    height: 24px;
+    border: 1px solid #d0cfcf;
+    border-radius: 4px;
+    width: -webkit-fill-available;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+  }
+}
+
+.inputElement {
+  width: 0.1px;
+  height: 0.1px;
+  overflow: hidden;
+  opacity: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.inputLabel {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 16px;
+  line-height: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.87);
+  border-radius: 4px 0px 0px 4px;
+  & > span {
+    position: absolute;
+    left: 155px;
+    top: 88%;
+    transform: translateX(-50%);
+    width: max-content;
+  }
+}
+
+.formControlImage {
+  display: flex;
+  margin-bottom: 50px;
+  & > p {
+    width: -webkit-fill-available;
+    padding: 20px;
+  }
+}
+
+.formControlPath {
+  border: 1px solid #d0cfcf;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-decoration: none;
+  overflow-wrap: break-word;
+}
+
+.errorMsg {
+  color: red;
+  display: block;
+  text-align: left;
+  padding-left: 10px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 60px;
+}
+
+.errorServerMsg {
+  position: relative;
+  & > p {
+    color: red;
+    position: absolute;
+    left: 35px;
+    top: -35px;
+  }
+}
+
+input[type="radio"]:checked {
+  border-color: #00bdd3;
+  background-color: #00bdd3;
+}

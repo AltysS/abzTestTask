@@ -1,0 +1,19 @@
+@import "../../styles/abstracts/variables.scss";
+.headerBtn {
+  padding: 5px 25px;
+  border-radius: 80px;
+  border: none;
+  font-size: 16px;
+  line-height: 26px;
+  font-family: "Nunito", sans-serif;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: $primary-color;
+  &:hover {
+    background-color: #ffe302 !important;
+  }
+  &:disabled {
+    background-color: #b4b4b4 !important;
+    color: #ffffff !important;
+  }
+}

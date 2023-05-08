@@ -1,0 +1,41 @@
+@media (min-width: 360px) {
+  .cardWrapper {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 370px;
+    min-width: 328px;
+    align-items: center;
+    & > * {
+      font-size: 16px;
+      line-height: 26px;
+    }
+    & > * img {
+      border-radius: 40px;
+    }
+    & > p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-decoration: none;
+      overflow-wrap: break-word;
+      width: 100%;
+    }
+  }
+
+  .aboutPerson {
+    width: 100%;
+    & > a {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      overflow-wrap: break-word;
+    }
+  }
+}

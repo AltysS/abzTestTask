@@ -4,11 +4,12 @@ import styles from "./Button.module.scss";
 const Button = (props) => {
   const { headerBtn } = styles;
   const { text, btnDisabled, handleClick, btnVisible } = props;
-  console.log(btnDisabled);
   return (
     <button
       className={headerBtn}
-      style={{ display: btnVisible ? "inline-block" : "none" }}
+      style={{
+        display: btnVisible ? "inline-block" : "none",
+      }}
       disabled={btnDisabled ? true : false}
       type="submit"
       onClick={handleClick}

@@ -14,8 +14,8 @@ const Header = () => {
         <h2 className={companyName}>TESTTASK</h2>
       </div>
       <div className={btnWrapper}>
-        <Button text="Users" color="#F4E041" />
-        <Button text="Sign Up" color="#F4E041" />
+        <Button text="Users" color="#F4E041" btnVisible={true} />
+        <Button text="Sign Up" color="#F4E041" btnVisible={true} />
       </div>
     </header>
   );

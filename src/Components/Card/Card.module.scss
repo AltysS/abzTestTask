@@ -2,11 +2,10 @@
   .cardWrapper {
     background: #ffffff;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 0 20px 0;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 370px;
     min-width: 328px;
     align-items: center;
     & > * {
@@ -22,12 +21,34 @@
       white-space: nowrap;
       text-decoration: none;
       overflow-wrap: break-word;
-      width: 100%;
+      max-width: 300px;
     }
   }
 
   .aboutPerson {
     width: 100%;
+    position: relative;
+    .email {
+      &:hover {
+        &:before {
+          content: attr(data-email);
+          color: #fff;
+          display: block;
+          position: absolute;
+          bottom: -10px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 5px 10px;
+          background-color: #000000;
+          border: 1px solid #000000;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          font-size: 12px;
+          line-height: 1.5;
+          white-space: nowrap;
+        }
+      }
+    }
     & > a {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -36,6 +57,34 @@
       text-decoration: none;
       color: inherit;
       overflow-wrap: break-word;
+      max-width: 300px;
+      margin: 0 auto;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .cardWrapper {
+    min-width: 344px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cardWrapper {
+    min-width: 282px;
+    & > p {
+      max-width: 250px;
+    }
+  }
+  .aboutPerson {
+    & > a {
+      max-width: 250px;
+    }
+  }
+}
+
+@media (min-width: 1360px) {
+  .cardWrapper {
+    min-width: 370px;
   }
 }

@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import styles from "./Button.module.scss";
 const Button = (props) => {
   const { headerBtn } = styles;
-  const { text, btnDisabled, color, handleClick, btnVisible } = props;
+  const { text, btnDisabled, handleClick, btnVisible } = props;
+  console.log(btnDisabled);
   return (
     <button
       className={headerBtn}

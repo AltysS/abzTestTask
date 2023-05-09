@@ -11,14 +11,12 @@ function App() {
   const [userAdded, setUserAdded] = useState(false);
   const [next_URL, setNext_URL] = useState();
 
-  const updateUsers = () => {
-    const updateData = async () => {
+  const updateUsers = async () => {
+    try {
       const usersData = await getUsers();
+      setNext_URL(usersData.links.next_url);
       setUsers(usersData.users);
       setBtnDisabled(false);
-    };
-    try {
-      updateData();
       setUserAdded(true);
     } catch (err) {
       console.log(err);
@@ -29,7 +27,7 @@ function App() {
     const getUsers = async () => {
       const usersData = await fetch(next_URL).then((res) => res.json());
       if (usersData.links.next_url === null) {
-        setBtnDisabled(true);
+        setBtnDisabled((prev) => !prev);
         setNext_URL(usersData.links.next_url);
         setUsers((prev) => {
           return [...prev, ...usersData.users];
@@ -56,6 +54,11 @@ function App() {
       setIsLoading(true);
       setNext_URL(usersData.links.next_url);
     };
+    try {
+      asyncUsersData();
+    } catch (err) {
+      console.log(err);
+    }
     try {
       asyncUsersData();
     } catch (err) {

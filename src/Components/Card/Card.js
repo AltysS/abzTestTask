@@ -19,6 +19,7 @@ const Card = (props) => {
           data-tip
           data-for="userEmail"
           href={`mailto: ${user.email}`}
+          data-email={user.email}
         >
           {user.email}
         </a>

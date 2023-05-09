@@ -1,4 +1,4 @@
-import { memo } from "react";
+import React, { memo } from "react";
 import styles from "./Main.module.scss";
 import backgroundImage from "../../images/mainLogo/main__logo.png";
 import Button from "../Button/Button";
@@ -7,6 +7,7 @@ import PostRequestForm from "../Forms/PostRequestForm/PostRequestForm";
 import SuccessRegistration from "../SuccessRegistration/SuccessRegistration";
 import stylesContainer from "../../App.module.scss";
 import classNames from "classnames";
+import Preloader from "../Preloader/Preloader";
 
 const Main = (props) => {
   const {
@@ -52,21 +53,30 @@ const Main = (props) => {
           className={classNames(backgroundWrapper, stylesContainer.container)}
         >
           <h2 className={workingWithGetReq}>Working with GET request</h2>
-          <div className={cardsWrapper}>
-            {loading ? (
-              users.map((user) => {
+          {loading ? (
+            <div className={cardsWrapper}>
+              {users.map((user) => {
                 return <Card users={user} key={user.id} />;
-              })
-            ) : (
-              <h2>Loading</h2>
-            )}
-          </div>
-          <Button
-            btnDisabled={btnDisabled}
-            text="Show More"
-            handleClick={handleShowUsers}
-            btnVisible={!btnDisabled}
-          />
+              })}
+            </div>
+          ) : (
+            <div
+              style={{
+                margin: "0 auto",
+                padding: "100px",
+              }}
+            >
+              <Preloader />
+            </div>
+          )}
+          {loading && (
+            <Button
+              btnDisabled={btnDisabled}
+              text="Show More"
+              handleClick={handleShowUsers}
+              btnVisible={!btnDisabled}
+            />
+          )}
         </div>
       </section>
       <section className={workingWithPostReq}>

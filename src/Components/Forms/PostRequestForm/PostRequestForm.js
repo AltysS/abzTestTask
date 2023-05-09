@@ -64,7 +64,7 @@ const PostRequestForm = (props) => {
             const token = await getRegistrationToken();
             const postUser = await postNewUser(token.token, userObj);
             if (postUser.success) {
-              updateUsers();
+              await updateUsers(true);
               resetForm();
             } else {
               setErr(postUser.message);
@@ -160,7 +160,7 @@ const PostRequestForm = (props) => {
                       );
                     })
                   ) : (
-                    <h2>Loading</h2>
+                    <h2>Loading...</h2>
                   )}
                   {props.errors.picked && props.touched.picked ? (
                     <span className={errorMsg}>{props.errors.picked}</span>
